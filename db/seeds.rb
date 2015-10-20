@@ -20,3 +20,8 @@ cat3 = Cat.create!(birth_date: "2005-03-17",
   sex: "M",
   description: "yet another cat"
 )
+
+request1 = CatRentalRequest.create!(start_date: '2015-10-20', end_date: '2015-10-25', cat_id: 1, status: "APPROVED")
+request2 = CatRentalRequest.create!(start_date: '2015-10-22', end_date: '2015-10-28', cat_id: 1)
+
+request3 = CatRentalRequest.create!(start_date: '2015-09-22', end_date: '2015-09-28', cat_id: 1)
