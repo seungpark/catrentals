@@ -1,8 +1,13 @@
-<%= render "form", cat: @cat %>
+<% form_method = (cat.persisted? ? "PATCH" : "POST" ) %>
+<!-- define what kind of form it is first. new post? or edit post?-->
+<% action_url = (cat.persisted? ? cat_url(@cat) : cats_url ) %>
 
 
-<!-- <form action="<%= cat_url(@cat) %>" method="POST">
-    <input type="hidden" name = "_method" value = "PATCH">
+<!-- need this line whether its new post / edit post -->
+<form action="<%= action_url %>" method="POST">
+
+    <!-- determining whether to post new / patch edit -->
+    <input type="hidden" name = "_method" value = "<%= form_method %>" >
 
     <label for="cat_name">Cat Name</label>
     <input id="cat_name" type="text" name="cat[name]" value="<%= @cat.name %>">
@@ -42,4 +47,4 @@
 
 
     <p><input type="submit"></p>
-</form> -->
+</form>
