@@ -17,7 +17,7 @@ class CatRentalRequest < ActiveRecord::Base
       CatRentalRequest
         .where('? >= start_date', self.end_date)
         .where('? <= end_date', self.start_date)
-        .where('? IS NULL || id != ?', self.id, self.id)
+        .where('? IS NULL OR id != ?', self.id, self.id)
     end
       # CatRentalRequest.all.select do |request|
       #   self.start_date.between?(request.start_date, request.end_date) ||
