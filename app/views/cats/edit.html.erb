@@ -1,0 +1,41 @@
+<form action="<%= cats_url %>" method="post">
+
+    <label for="cat_name">Cat Name</label>
+    <input id="cat_name" type="text" name="cat[name]" value="<%= @cat.name %>">
+
+    <p>
+      <label>
+          Male
+         <input id="cat_sex_male"  type="radio" name="cat[sex]" value="M" <%= "checked" if @cat.sex == 'M' %> >
+      </label>
+
+      <label>
+          Female
+         <input id="cat_sex_female"  type="radio" name="cat[sex]" value="F" <%= "checked" if @cat.sex == 'F' %> >
+      </label>
+    </p>
+
+    <p>
+    <label for="cat_color">Color</label>
+    <select id="cat_color" name="cat[color]">
+      <option></option>
+      <option <%= "selected" if @cat.color == "black" %> >black</option>
+      <option <%= "selected" if @cat.color == "white" %> >white</option>
+      <option <%= "selected" if @cat.color == "red" %> >red</option>
+      <option <%= "selected" if @cat.color == "tan" %> >tan</option>
+    </select>
+    </p>
+
+    <p>
+    <label for="cat_birthdate">Birth Date</label>
+    <input id="cat_birthdate" type="date" name="cat[birth_date]" value="<%=@cat.birth_date%>">
+    </p>
+
+    <p>
+    <label for="cat_description">Description</label>
+    <textarea rows="5" cols="20" name=cat[description] value=""><%=@cat.description%></textarea>
+    </p>
+
+
+    <p><input type="submit"></p>
+</form>

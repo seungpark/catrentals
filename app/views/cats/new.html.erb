@@ -1,0 +1,36 @@
+<form action="<%= cats_url %>" method="post">
+
+    <label for="cat_name">Cat Name</label>
+    <input id="cat_name" type="text" name="cat[name]" value="">
+
+    <p>
+
+    <label for="cat_sex">Sex</label>
+      <input id="cat_sex" type="radio" name="cat[sex]" value="M">Male
+      <input id="cat_sex" type="radio" name="cat[sex]" value="F">Female
+    </p>
+
+    <p>
+    <label for="cat_color">Color</label>
+    <select id="cat_color" name="cat[color]">
+      <option></option>
+      <option>black</option>
+      <option>white</option>
+      <option>red</option>
+      <option>tan</option>
+    </select>
+    </p>
+
+    <p>
+    <label for="cat_birthdate">Birth Date</label>
+    <input id="cat_birthdate" type="date" name="cat[birth_date]" value="">
+    </p>
+
+    <p>
+    <label for="cat_description">Description</label>
+    <textarea rows="5" cols="20" name=cat[description] value=""></textarea>
+    </p>
+
+
+    <p><input type="submit"></p>
+</form>
